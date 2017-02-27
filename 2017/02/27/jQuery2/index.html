@@ -8,37 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>jQuery剖析(二) | Recollection</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="（行~行）（#13334）代表JQ官方网站上Bugs的索引
-（1，,1）注释：  版本
-Sizzle 官方网站
-版权 及 赞助的个人，并为MIT的合法软件
-最近更新的时间
-&amp;lt;!--more--&amp;gt;
-（14）最外层的闭包函数
-    第一个参数是window（1.根据作用域链的原理最先找内层的window，所以将其作为参数传入时可避免在向外层查找window的过程中消耗不必要的性能2.在压">
+  <meta name="description" content="（行~行）（#13334）代表JQ官方网站上Bugs的索引（1，,1）注释：  版本Sizzle 官方网站版权 及 赞助的个人，并为MIT的合法软件最近更新的时间">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery剖析(二)">
 <meta property="og:url" content="http://yoursite.com/2017/02/27/jQuery2/index.html">
 <meta property="og:site_name" content="Recollection">
-<meta property="og:description" content="（行~行）（#13334）代表JQ官方网站上Bugs的索引
-（1，,1）注释：  版本
-Sizzle 官方网站
-版权 及 赞助的个人，并为MIT的合法软件
-最近更新的时间
-&amp;lt;!--more--&amp;gt;
-（14）最外层的闭包函数
-    第一个参数是window（1.根据作用域链的原理最先找内层的window，所以将其作为参数传入时可避免在向外层查找window的过程中消耗不必要的性能2.在压">
-<meta property="og:updated_time" content="2017-02-27T09:44:25.246Z">
+<meta property="og:description" content="（行~行）（#13334）代表JQ官方网站上Bugs的索引（1，,1）注释：  版本Sizzle 官方网站版权 及 赞助的个人，并为MIT的合法软件最近更新的时间">
+<meta property="og:updated_time" content="2017-02-27T09:54:24.901Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery剖析(二)">
-<meta name="twitter:description" content="（行~行）（#13334）代表JQ官方网站上Bugs的索引
-（1，,1）注释：  版本
-Sizzle 官方网站
-版权 及 赞助的个人，并为MIT的合法软件
-最近更新的时间
-&amp;lt;!--more--&amp;gt;
-（14）最外层的闭包函数
-    第一个参数是window（1.根据作用域链的原理最先找内层的window，所以将其作为参数传入时可避免在向外层查找window的过程中消耗不必要的性能2.在压">
+<meta name="twitter:description" content="（行~行）（#13334）代表JQ官方网站上Bugs的索引（1，,1）注释：  版本Sizzle 官方网站版权 及 赞助的个人，并为MIT的合法软件最近更新的时间">
   
     <link rel="alternative" href="/atom.xml" title="Recollection" type="application/atom+xml">
   
@@ -193,25 +172,12 @@ Sizzle 官方网站
     <div class="article-entry" itemprop="articleBody">
       
         
-        <pre><code>（行~行）（#13334）代表JQ官方网站上Bugs的索引
-（1，,1）注释：  版本
-Sizzle 官方网站
-版权 及 赞助的个人，并为MIT的合法软件
-最近更新的时间
-&lt;!--more--&gt;
-（14）最外层的闭包函数
-    第一个参数是window（1.根据作用域链的原理最先找内层的window，所以将其作为参数传入时可避免在向外层查找window的过程中消耗不必要的性能2.在压缩的版本中接收window的参数名可以简写为e）
-    第二个参数是undefined（undefined是window下的一个属性， 不是保留字也不是关键字，在某些版本浏览器中是可以被赋值修改掉的，所以将undefined也作为参数传入）
+        <p>（行~行）（#13334）代表JQ官方网站上Bugs的索引<br>（1，,1）注释：  版本<br>Sizzle 官方网站<br>版权 及 赞助的个人，并为MIT的合法软件<br>最近更新的时间<br><a id="more"></a><br>（14）最外层的闭包函数<br>第一个参数是window（1.根据作用域链的原理最先找内层的window，所以将其作为参数传入时可避免在向外层查找window的过程中消耗不必要的性能2.在压缩的版本中接收window的参数名可以简写为e）<br>第二个参数是undefined（undefined是window下的一个属性， 不是保留字也不是关键字，在某些版本浏览器中是可以被赋值修改掉的，所以将undefined也作为参数传入）</p>
+<p>（16,20）注释：    “use strict”：严格模式 （代码必须规范，例如非严格模式下可以用8进制严格模式下不可以使用）但不建议使用它，1.IE低版本不支持 会有兼容问题。2.在.net或火狐早期版本会出现火狐假死状态和.net跟踪有些问题，除非对这些非常了解可以使用。火狐在18+不存在这个问题，官方网站下Bugs #13335的索引有详细说明。</p>
+<p>（21）变量：<br>rootjQuery  等同于$/jquery（document），在866行进行赋值。给jquery（document）定义变量的意义：1.在压缩版本中变量名可以更改2.当程序中的一个数值有易识别的变量名时，会便于阅读识别此值得用意更利于后期的维护。</p>
+<p>readyList  DOM加载</p>
+<p>core_strundefined = typeof undefined 此变量存的是一个字符串形式的undefined  </p>
 
-（16,20）注释：    &quot;use strict&quot;：严格模式 （代码必须规范，例如非严格模式下可以用8进制严格模式下不可以使用）但不建议使用它，1.IE低版本不支持 会有兼容问题。2.在.net或火狐早期版本会出现火狐假死状态和.net跟踪有些问题，除非对这些非常了解可以使用。火狐在18+不存在这个问题，官方网站下Bugs #13335的索引有详细说明。
-
-（21）变量：
-        rootjQuery  等同于$/jquery（document），在866行进行赋值。给jquery（document）定义变量的意义：1.在压缩版本中变量名可以更改2.当程序中的一个数值有易识别的变量名时，会便于阅读识别此值得用意更利于后期的维护。
-
-    readyList  DOM加载
-
-    core_strundefined = typeof undefined 此变量存的是一个字符串形式的undefined  
-</code></pre>
       
 
       
